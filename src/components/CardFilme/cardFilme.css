@@ -1,0 +1,32 @@
+.wrapper-filme{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: cornsilk;
+}
+
+.wrapper-filme img{
+    height: auto;
+    width: 200px;
+    place-self: center;
+}
+
+.wrapper-filme h3{
+    color: black;
+}
+
+.wrapper-filme a{
+    padding: 1rem;
+    background-color: black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease 0.3s;
+}
+
+.wrapper-filme a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
