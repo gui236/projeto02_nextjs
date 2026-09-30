@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -35,14 +36,113 @@ body {
 }
 
 .produto {
-    width: 750px;
+    width: 800px;
     height: 500px;
     background-color: white;
     border-radius: 5px;
     display: flex;
+    gap: 2rem;
+}
+
+.esquerda{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* background-color: aquamarine; */
+}
+
+.esquerda img{
+    background-color: whitesmoke;
+    border-radius: 5px;
+    width: 325px;
+    height: auto;
 }
 
 .direita {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    /* gap: 1rem; */
     /* background-color: blue; */
+}
+
+.direita h1{
+    color: black;
+    font-size: 1.3rem;
+    max-width: 800px;
+    font-weight: 500;
+}
+
+.desconto {
+    color: #2d815d;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.codigo{
+  color: #aaa;
+    margin-top: 5px;
+    font-size: 0.9rem;  
+}
+
+.direita h2{
+    color: black;
+    font-size: 1.3rem;
+    max-width: 800px;
+    font-weight: 500;
+    margin-top: 1rem;
+    display: flex;
+    align-items:flex-start;
+}
+.direita hr{
+    border: 0;
+    background-color: #aaa;
+    width: 80%;
+    height: 1px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.direita p{
+    max-width: 85%;
+    font-size: 1rem;
+    color: black;
+    font-style: italic;
+}
+
+.info {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.info h3{
+    padding: 8px;
+    border: 1px solid #aaa;
+    box-shadow: 0 0 5px rgba(170, 170, 170, 0.1);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: black;
+    font-weight: 100;
+}
+
+.info h3 i{
+    color: orange;
+}
+
+.direita h4{
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.direita strong {
+    color: black;
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: underline;
 }

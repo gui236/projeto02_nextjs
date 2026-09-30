@@ -1,42 +1,56 @@
 "use client";
 
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import "./produto.css";
 
 export default function Produto() {
-    const [produtos, setProdutos] = useState([]);
     const [produto, setProduto] = useState(null);
     const params = useParams();
 
     useEffect(() => {
-        fetch('https://dummyjson.com/products')
+        fetch(`https://dummyjson.com/products/${params.id}`)
             .then((res) => res.json())
             .then((data) => {
-            setProdutos(data.products);
+            setProduto(data);
             });
     }, []);
-
-    useEffect(() => {
-        const produtoEncontrado = produtos.find(p => p.id == params.id);
-        setProduto(produtoEncontrado);
-    }, [produtos, params.id])
     
     return (
      <main>
-        <div className="container-produto">
-            <a href={`../produtos`}>Voltar ao catálogo</a>
+        {produto != null &&
+        <>
+            <div className="container-produto">
+                <a href={`../produtos`}>Voltar ao catálogo</a>
 
-            <div className="produto">
-                <div className="direita"></div>
+                <div className="produto">
+                    <div className="esquerda">
+                        <img src={produto.images}/>
+                    </div>
 
-                <div className="esquerda">
-                    <img src={produto.images}/>
+                    <div className="direita">
+                        <h1>{produto.title}</h1>
 
-                    <h1>{produto.title}</h1>
+                        <span className="codigo">Código(SKU): {produto.sku}</span>
+
+                        <h2>R$ {produto.price}&nbsp; <span className='desconto'>({produto.discountPercentage}% de Desconto)</span></h2>
+
+                        <hr/>
+
+                        <p>{produto.description}</p>
+
+                        <div className="info">
+                            <h3>Qtd. Estoque: {produto.stock}</h3>
+                            <h3>Avaliações: {produto.rating}&nbsp;<i className="bi bi-star-fill"></i></h3>
+                        </div>
+
+                        <h4>Política de Devolução: <strong>{produto.returnPolicy}</strong></h4>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>}
+        
      </main>   
     )
 }
